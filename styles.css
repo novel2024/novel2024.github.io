@@ -4,7 +4,7 @@ body {
     align-items: center; /* 垂直居中 */
   }
 
-@media (max-width: 1100px) {
+@media only screen (max-width: 1100px) {
     /* 屏幕宽度小于等于768px时应用的样式 */
     body {
         font-size: 48x;
