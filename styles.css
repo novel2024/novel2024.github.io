@@ -22,6 +22,18 @@ body {
     h1 {
         font-size: 48px !important;
     }
+
+    .my-8 {
+        font-size: 48px;
+    }
+
+    table {
+        width: 100% !important;
+    }
+
+    .table-row {
+        height: 100px !important;
+    }
 }
 
 table {
