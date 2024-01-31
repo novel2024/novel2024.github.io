@@ -14,6 +14,14 @@ body {
         margin: 0 auto;
         font-size: 48px;
     }
+
+    .book-description {
+        font-size: 48px;
+    }
+
+    h1 {
+        font-size: 48px !important;
+    }
 }
 
 table {
