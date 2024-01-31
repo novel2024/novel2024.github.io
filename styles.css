@@ -4,6 +4,13 @@ body {
     align-items: center; /* 垂直居中 */
   }
 
+@media (max-width: 768px) {
+    /* 屏幕宽度小于等于768px时应用的样式 */
+    body {
+        font-size: 24px;
+    }
+}
+
 table {
     width: 400px;
     /* border: 2px solid #000; */
