@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title || (locals.metadata ? metadata.title : 'Chapter Detail') %></title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-family: 'Georgia', serif; /* Example: Serif font for readability */
+            line-height: 1.8; /* Increased line height */
+        }
+        .container {
+            max-width: 800px; /* Or your preferred reading width */
+        }
+        .chapter-content {
+            font-size: 1.1rem; /* Adjust as needed */
+            margin-bottom: 30px;
+        }
+        .chapter-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+        }
+        .navigation-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .navigation-links a {
+            margin: 5px;
+            white-space: normal; /* Allow text wrapping in links */
+            text-align: center; /* Center text in links */
+        }
+        .nav-link-prev, .nav-link-next {
+            flex-basis: 30%; /* Adjust basis for responsiveness */
+            max-width: 30%;
+        }
+        .nav-link-toc {
+            flex-basis: 30%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .chapter-content {
+                font-size: 1.2rem; /* Larger for mobile readability */
+                line-height: 1.9;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .navigation-links a {
+                font-size: 0.9rem;
+                flex-basis: 100%; /* Stack links on smaller screens */
+                margin-bottom: 10px;
+            }
+            .nav-link-prev, .nav-link-next, .nav-link-toc {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <% if (locals.error) { %>
+            <h1><%= locals.title || 'Error' %></h1>
+            <hr>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+            <a href="/stories/<%= locals.currentStoryFolderName %>" class="btn btn-secondary mt-3">&laquo; Back to Chapter List</a>
+            <a href="/" class="btn btn-primary mt-3">Home</a>
+
+        <% } else if (locals.metadata && locals.chapterContent) { %>
+            <h1 class="mb-4 text-center"><%= metadata.title %></h1>
+            <hr>
+
+            <nav aria-label="Chapter navigation" class="navigation-links mb-4">
+                <% if (locals.previousChapter) { %>
+                    <a href="/stories/<%= currentStoryFolderName %>/chapters/<%= previousChapter.original_file_name.replace('.html', '') %>" class="btn btn-outline-secondary nav-link-prev">
+                        &laquo; Previous<br><span class="small"><%= previousChapter.title %></span>
+                    </a>
+                <% } else { %>
+                    <span class="btn btn-outline-secondary nav-link-prev disabled">&laquo; Previous</span>
+                <% } %>
+
+                <a href="/stories/<%= currentStoryFolderName %>" class="btn btn-outline-primary nav-link-toc">
+                    Back to Chapter List<br><span class="small">(<%= metadata.chapter_number %>)</span>
+                </a>
+
+                <% if (locals.nextChapter) { %>
+                    <a href="/stories/<%= currentStoryFolderName %>/chapters/<%= nextChapter.original_file_name.replace('.html', '') %>" class="btn btn-outline-secondary nav-link-next">
+                        Next &raquo;<br><span class="small"><%= nextChapter.title %></span>
+                    </a>
+                <% } else { %>
+                    <span class="btn btn-outline-secondary nav-link-next disabled">Next &raquo;</span>
+                <% } %>
+            </nav>
+
+            <div class="chapter-content">
+                <%- chapterContent %>
+            </div>
+
+            <hr>
+            <nav aria-label="Chapter navigation" class="navigation-links mt-4">
+                 <% if (locals.previousChapter) { %>
+                    <a href="/stories/<%= currentStoryFolderName %>/chapters/<%= previousChapter.original_file_name.replace('.html', '') %>" class="btn btn-outline-secondary nav-link-prev">
+                        &laquo; Previous<br><span class="small"><%= previousChapter.title %></span>
+                    </a>
+                <% } else { %>
+                    <span class="btn btn-outline-secondary nav-link-prev disabled">&laquo; Previous</span>
+                <% } %>
+
+                <a href="/stories/<%= currentStoryFolderName %>" class="btn btn-outline-primary nav-link-toc">
+                    Back to Chapter List<br><span class="small">(<%= metadata.chapter_number %>)</span>
+                </a>
+
+                <% if (locals.nextChapter) { %>
+                    <a href="/stories/<%= currentStoryFolderName %>/chapters/<%= nextChapter.original_file_name.replace('.html', '') %>" class="btn btn-outline-secondary nav-link-next">
+                        Next &raquo;<br><span class="small"><%= nextChapter.title %></span>
+                    </a>
+                <% } else { %>
+                    <span class="btn btn-outline-secondary nav-link-next disabled">Next &raquo;</span>
+                <% } %>
+            </nav>
+
+        <% } else { %>
+            <h1>Chapter Not Available</h1>
+            <hr>
+            <p class="text-muted">The requested chapter content could not be displayed.</p>
+            <a href="/stories/<%= locals.currentStoryFolderName %>" class="btn btn-secondary mt-3">&laquo; Back to Chapter List</a>
+            <a href="/" class="btn btn-primary mt-3">Home</a>
+        <% } %>
+
+        <footer class="text-center mt-5">
+            <p class="text-muted small">&copy; Novel Reader App</p>
+        </footer>
+    </div>
+</body>
+</html>

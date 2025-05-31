@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title || (mode === 'Create' ? 'Create Story' : 'Edit Story') %></title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <style>
+        body { padding-top: 20px; padding-bottom: 20px; }
+        .container { max-width: 720px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/admin">Admin Dashboard</a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="btn btn-outline-secondary" href="/admin">Back to Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>
+            <% if (mode === 'Create') { %>
+                Create New Story
+            <% } else { %>
+                Edit Story: <%= story.title %>
+            <% } %>
+        </h1>
+        <hr>
+
+        <% if (locals.error) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+
+        <form method="POST" action="<%= mode === 'Create' ? '/admin/stories' : ('/admin/stories/edit/' + story.folder_name) %>">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= story.title || '' %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="folder_name" class="form-label">Folder Name</label>
+                <input type="text" class="form-control" id="folder_name" name="folder_name" value="<%= story.folder_name || '' %>"
+                       <%= mode === 'Edit' ? 'readonly' : '' %> required>
+                <div class="form-text">
+                    URL-friendly name (e.g., "my-cool-story"). Should be lowercase, no spaces or special characters.
+                    <% if (mode === 'Edit') { %>
+                        <strong>Cannot be changed after creation.</strong>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="5"><%= story.description || '' %></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <%= mode === 'Create' ? 'Create Story' : 'Save Changes' %>
+            </button>
+            <a href="/admin" class="btn btn-secondary">Cancel</a>
+        </form>
+
+        <hr class="mt-5">
+        <footer class="text-center mt-4">
+            <p class="text-muted small">&copy; Novel Reader App - Admin Panel</p>
+        </footer>
+    </div>
+</body>
+</html>
