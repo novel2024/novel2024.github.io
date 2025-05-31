@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title || 'Story Chapters' %></title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .chapter-list-item {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .chapter-list-item a {
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .story-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <% if (locals.error && !locals.story) { %>
+            <!-- Error when story itself is not found or major error -->
+            <h1><%= locals.title || 'Error' %></h1>
+            <hr>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } else if (locals.story) { %>
+            <!-- Display story details and chapters -->
+            <h1><%= story.title %></h1>
+            <% if (story.description) { %>
+                <p class="lead story-description"><%= story.description %></p>
+            <% } %>
+            <hr>
+
+            <% if (locals.error) { %>
+                <!-- Error related to loading chapters, but story was found -->
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+
+            <h2>Chapters</h2>
+            <% if (locals.chapters && chapters.length > 0) { %>
+                <ul class="list-group">
+                    <% chapters.forEach(chapter => { %>
+                        <li class="list-group-item chapter-list-item">
+                            <a href="/stories/<%= story.folder_name %>/chapters/<%= chapter.original_file_name.replace('.html', '') %>">
+                                <%= chapter.title %> (Chapter <%= chapter.chapter_number %>)
+                            </a>
+                        </li>
+                    <% }); %>
+                </ul>
+            <% } else if (!locals.error) { %>
+                <!-- No chapters found, and no error occurred while trying to load them -->
+                <p class="text-muted">No chapters found for this story.</p>
+            <% } %>
+
+        <% } else if (!locals.error) { %>
+             <!-- Fallback for unexpected state, though should be covered by story not found -->
+            <h1>Story Not Available</h1>
+            <hr>
+            <p class="text-muted">The requested story could not be displayed.</p>
+        <% } %>
+
+        <hr>
+        <div class="mt-4">
+            <a href="/" class="btn btn-secondary">&laquo; Back to All Stories</a>
+        </div>
+
+        <footer class="text-center mt-5">
+            <p class="text-muted small">&copy; Novel Reader App</p>
+        </footer>
+    </div>
+</body>
+</html>

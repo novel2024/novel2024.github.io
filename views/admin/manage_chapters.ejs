@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title || 'Manage Chapters' %></title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <style>
+        body { padding-top: 20px; padding-bottom: 20px; }
+        .container { max-width: 960px; }
+        .table-actions form { display: inline-block; margin-left: 5px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/admin">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <span class="navbar-text me-3">Welcome, <%= locals.username || 'Admin' %>!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary me-2" href="/admin">Back to Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <% if (locals.error && !locals.story) { %>
+            <!-- Error when story itself is not found -->
+            <h1>Error</h1>
+            <hr>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+             <a href="/admin" class="btn btn-secondary">&laquo; Back to Dashboard</a>
+        <% } else if (locals.story) { %>
+            <h1><%= locals.title || `Manage Chapters for: ${story.title}` %></h1>
+            <hr>
+
+            <% if (locals.error) { %>
+                 <!-- Error related to loading chapters, but story was found -->
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <a href="/admin" class="btn btn-sm btn-outline-secondary">&laquo; Back to All Stories</a>
+                <a href="/admin/stories/<%= story.folder_name %>/chapters/new" class="btn btn-primary">Add New Chapter</a>
+            </div>
+
+            <% if (locals.chapters && chapters.length > 0) { %>
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Chapter Title</th>
+                            <th>Chapter Number</th>
+                            <th>Original Filename</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% chapters.forEach(chapter => { %>
+                            <tr>
+                                <td><%= chapter.title %></td>
+                                <td><%= chapter.chapter_number %></td>
+                                <td><%= chapter.original_file_name %></td>
+                                <td class="table-actions">
+                                    <a href="/admin/stories/<%= story.folder_name %>/chapters/edit/<%= chapter.original_file_name.replace('.html', '') %>" class="btn btn-sm btn-warning">Edit</a>
+                                    <form method="POST" action="/admin/stories/<%= story.folder_name %>/chapters/delete/<%= chapter.original_file_name.replace('.html', '') %>" onsubmit="return confirm('Are you sure you want to delete this chapter? This action cannot be undone.');">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else if (!locals.error) { %>
+                <p class="text-muted">No chapters found for this story. <a href="/admin/stories/<%= story.folder_name %>/chapters/new">Add one!</a></p>
+            <% } %>
+        <% } else if (!locals.error) { %>
+            <!-- Fallback for unexpected state where story is null but no error was explicitly passed -->
+            <h1>Story Information Not Available</h1>
+            <hr>
+            <p class="text-muted">The details for this story could not be loaded.</p>
+            <a href="/admin" class="btn btn-secondary">&laquo; Back to Dashboard</a>
+        <% } %>
+
+        <hr class="mt-4">
+        <footer class="text-center mt-4">
+            <p class="text-muted small">&copy; Novel Reader App - Admin Panel</p>
+        </footer>
+    </div>
+</body>
+</html>
