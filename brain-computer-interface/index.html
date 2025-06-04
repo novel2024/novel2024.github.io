@@ -327,6 +327,56 @@ Q群：172073109</p>
         </ul>
     </div>
 
+<script>
+function sendToTTS() {
+    const contentDiv = document.querySelector("div.content");
+    if (!contentDiv) {
+        console.error("Content div not found");
+        alert("Could not find chapter content.");
+        return;
+    }
+    const paragraphs = contentDiv.querySelectorAll("p");
+    let textContent = "";    paragraphs.forEach(p => {
+        textContent += p.innerText + "\n\n";
+    });
+    if (textContent.trim() === "") {
+        alert("No text content found to send.");
+        return;
+    }
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://freelongtts.com/";
+    form.target = "_blank";
+    const textInput = document.createElement("input");
+    textInput.type = "hidden";
+    textInput.name = "text";
+    textInput.value = textContent;
+    form.appendChild(textInput);
+    const langInput = document.createElement("input");
+    langInput.type = "hidden";
+    langInput.name = "lang";
+    langInput.value = "zh-CN";
+    form.appendChild(langInput);
+    const voiceInput = document.createElement("input");
+    voiceInput.type = "hidden";
+    voiceInput.name = "voice";
+    voiceInput.value = "zh-CN-XiaoxiaoNeural"; // This voice code is speculative
+    form.appendChild(voiceInput);
+    const volumeInput = document.createElement("input");
+    volumeInput.type = "hidden";
+    volumeInput.name = "volume";
+    volumeInput.value = "100";
+    form.appendChild(volumeInput);
+    const ssmlInput = document.createElement("input");
+    ssmlInput.type = "hidden";
+    ssmlInput.name = "ssml";
+    ssmlInput.value = "false";
+    form.appendChild(ssmlInput);
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+}
+</script>
 </body>
 
 </html>
