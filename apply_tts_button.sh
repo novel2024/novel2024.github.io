@@ -29,9 +29,8 @@ function sendToTTS() {
         return;
     }
     const paragraphs = contentDiv.querySelectorAll("p");
-    let textContent = "";
-    paragraphs.forEach(p => {
-        textContent += p.innerText + "\n\n";
+    let textContent = "";    paragraphs.forEach(p => {
+        textContent += p.innerText + "\\n\\n";
     });
     if (textContent.trim() === "") {
         alert("No text content found to send.");
