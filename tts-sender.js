@@ -78,21 +78,26 @@ class TTSSender {
      * Create TTS button and add to page
      */
     createTTSButton() {
+        const h1Element = document.querySelector('h1');
+        if (!h1Element) {
+            console.warn('No h1 element found, button will not be created');
+            return;
+        }
+
         const button = document.createElement('button');
         button.innerHTML = '🎐 魔法朗读';
         button.className = 'ghibli-tts-btn';
         button.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+            display: inline-block;
+            margin-left: 20px;
+            vertical-align: middle;
             background: linear-gradient(135deg, #a8e6cf 0%, #7fcdcd 50%, #8bc6ec 100%);
             border: 3px solid #fff;
-            padding: 12px 20px;
+            padding: 8px 16px;
             border-radius: 25px;
             color: #2c5530;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
             box-shadow: 
@@ -139,15 +144,14 @@ class TTSSender {
             });
         };
 
-        addGhibliEffects();
-
-        button.addEventListener('click', () => {
+        addGhibliEffects();        button.addEventListener('click', () => {
             // Add magical sparkle effect on click
             this.createSparkleEffect(button);
             this.sendToTTS();
         });
 
-        document.body.appendChild(button);
+        // Insert button next to h1 element
+        h1Element.parentNode.insertBefore(button, h1Element.nextSibling);
     }
 
     /**
