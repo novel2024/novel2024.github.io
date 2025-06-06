@@ -5,9 +5,7 @@
 class TTSSender {
     constructor() {
         this.ttsUrl = 'https://freelongtts.com';
-    }
-
-    /**
+    }    /**
      * Extract all paragraph text content while preserving structure
      * @returns {string} Combined text content
      */
@@ -18,8 +16,8 @@ class TTSSender {
         paragraphs.forEach((p, index) => {
             const text = p.textContent.trim();
             if (text) {
-                // Add paragraph number for structure preservation
-                textContent.push(`第${index + 1}段：${text}`);
+                // Add clean text without paragraph numbering
+                textContent.push(text);
             }
         });
         
