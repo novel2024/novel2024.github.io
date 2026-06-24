@@ -1,38 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy</title>
+<title>隐私政策</title>
 <style>
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;max-width:720px;margin:40px auto;padding:0 20px;color:#222;line-height:1.6;}
-  h1{font-size:1.6em;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;max-width:880px;margin:40px auto;padding:0 20px;color:#222;line-height:1.7;}
+  h1{font-size:1.8em;border-bottom:2px solid #eee;padding-bottom:8px;}
+  h2{font-size:1.3em;margin-top:32px;border-left:4px solid #0078d4;padding-left:10px;}
+  h3{font-size:1.05em;margin-top:20px;color:#0078d4;}
   .updated{color:#888;font-size:0.9em;}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:0.95em;}
+  th,td{border:1px solid #ddd;padding:8px 10px;text-align:left;vertical-align:top;}
+  th{background:#f4f7fa;font-weight:600;}
+  ul{padding-left:22px;}
+  li{margin:4px 0;}
+  .note{background:#f4f7fa;border-left:4px solid #0078d4;padding:12px 16px;margin:16px 0;border-radius:4px;}
+  .toc{background:#fafafa;border:1px solid #eee;border-radius:6px;padding:14px 20px;margin:20px 0;}
+  .toc ul{margin:6px 0;}
+  .toc a{color:#0078d4;text-decoration:none;}
+  .toc a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: June 20, 2026</p>
 
-  <p>This Privacy Policy describes how our Chrome extension ("the Extension") handles information.</p>
+<h1>隐私政策</h1>
+<p class="updated">最后更新日期：2026 年 6 月 24 日</p>
 
-  <h2>Information We Collect</h2>
-  <p>We do <strong>not</strong> collect, store, share, or transmit any personal data or personally identifiable information (PII) from users.</p>
-  <p>The Extension processes all data locally on your device. No data is sent to any external server or third party.</p>
+<div class="note">
+  <strong>本政策的适用范围：</strong>本隐私政策适用于本开发者（以下简称"我们"）在 Microsoft Store 中发布的本扩展程序（以下简称"本产品"或"本扩展"），包括本产品随附提供的所有功能、组件及相关服务。请您在使用本产品前仔细阅读本政策。一旦您安装、访问或以其他方式使用本产品，即表示您已知悉并同意本政策的全部内容。
+</div>
 
-  <h2>Permissions</h2>
-  <p>The Extension requests only the permissions strictly necessary to perform its core function. These permissions are used solely for the in-device functionality described on the Chrome Web Store listing and do not grant access to your personal data.</p>
+<div class="toc">
+  <strong>目录</strong>
+  <ul>
+    <li><a href="#collect">一、我们收集的数据</a></li>
+    <li><a href="#use">二、数据的使用方式与目的</a></li>
+    <li><a href="#process">三、数据的处理方式</a></li>
+    <li><a href="#store">四、数据的存储与保留</a></li>
+    <li><a href="#share">五、数据的共享、披露与传输对象</a></li>
+    <li><a href="#permission">六、权限说明</a></li>
+    <li><a href="#third-party">七、第三方服务</a></li>
+    <li><a href="#security">八、数据安全</a></li>
+    <li><a href="#children">九、未成年人隐私</a></li>
+    <li><a href="#rights">十、您的权利与选择</a></li>
+    <li><a href="#changes">十一、政策变更</a></li>
+    <li><a href="#contact">十二、联系我们</a></li>
+  </ul>
+</div>
 
-  <h2>Third-Party Services</h2>
-  <p>The Extension does not use, integrate with, or send data to any third-party services, analytics tools, or advertising networks.</p>
+<h2 id="collect">一、我们收集的数据</h2>
+<p>我们承诺以<strong>最小化</strong>原则处理您的数据。下表完整披露本产品涉及的全部数据类型、收集方式、收集目的以及是否本地存储：</p>
 
-  <h2>Children's Privacy</h2>
-  <p>The Extension is intended for a general audience and does not knowingly collect any data from anyone, including children under 13.</p>
+<table>
+  <thead>
+    <tr>
+      <th>数据类型</th>
+      <th>具体内容</th>
+      <th>收集方式</th>
+      <th>使用目的</th>
+      <th>是否本地存储</th>
+      <th>是否传输至外部</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>用户主动输入的内容</td>
+      <td>您在使用本产品功能时主动提供或选择的文本、图片链接、待处理文件等</td>
+      <td>由您在本产品界面中直接输入或选择</td>
+      <td>用于执行您请求的对应功能（例如去水印、格式转换、内容处理等）</td>
+      <td>仅在本地浏览器环境中临时处理</td>
+      <td>否，不会上传至任何服务器</td>
+    </tr>
+    <tr>
+      <td>浏览器技术信息（必需的最少信息）</td>
+      <td>为使扩展正常运行所必需的浏览器接口信息（例如当前页面的 DOM 结构、媒体资源 URL）</td>
+      <td>由浏览器通过标准扩展 API 自动提供</td>
+      <td>用于定位、读取和处理您所访问页面中的指定内容</td>
+      <td>仅在本地内存中处理，不写入持久存储</td>
+      <td>否</td>
+    </tr>
+    <tr>
+      <td>扩展配置信息</td>
+      <td>您在扩展选项页中设置的偏好（例如开关状态、默认参数）</td>
+      <td>由您手动设置或修改</td>
+      <td>用于记住您的个性化偏好，以便下次使用时恢复</td>
+      <td>是，使用浏览器提供的本地存储（chrome.storage.local）</td>
+      <td>否</td>
+    </tr>
+    <tr>
+      <td>个人身份信息（PII）</td>
+      <td>姓名、邮箱、电话、地址、身份证号、地理位置、Cookie 中的身份标识等</td>
+      <td>不适用</td>
+      <td>不适用</td>
+      <td>不适用</td>
+      <td>不适用</td>
+    </tr>
+    <tr>
+      <td>使用情况与行为分析数据</td>
+      <td>点击记录、页面停留时长、崩溃日志、广告 ID 等</td>
+      <td>不适用</td>
+      <td>不适用</td>
+      <td>不适用</td>
+      <td>不适用</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h2>Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+<p>除上表明确列出的数据类型外，本产品<strong>不会</strong>收集任何其他用户数据。<strong>我们不会收集任何可用于识别个人身份的信息（PII），也不会收集位置、通讯录、相册、麦克风、摄像头、键盘记录、剪贴板（除用户主动发起的内容外）、浏览历史、Cookie 身份标识等敏感数据。</strong></p>
 
-  <h2>Contact</h2>
-  <p>If you have any questions about this Privacy Policy, please contact us through the Chrome Web Store listing.</p>
+<h2 id="use">二、数据的使用方式与目的</h2>
+<p>本产品对前述数据的处理仅用于以下目的：</p>
+<ul>
+  <li><strong>提供核心功能：</strong>执行您请求的具体处理任务（例如去除图片水印、下载媒体、转换格式等）。</li>
+  <li><strong>维持基本运行：</strong>在本地浏览器环境中读取必要的页面或资源数据，以完成功能调用。</li>
+  <li><strong>保存个性化设置：</strong>将您主动配置的偏好存储在本地，以便跨会话保留。</li>
+  <li><strong>改进产品体验：</strong>由于本产品不收集任何使用分析数据，我们无法也<strong>不会</strong>基于用户行为进行分析、画像或追踪。</li>
+  <li><strong>履行法定义务：</strong>在适用法律、法规或具有法律效力的政府命令要求时，对合法请求作出必要响应（目前本产品无任何数据可被披露）。</li>
+</ul>
+<p>我们<strong>不会</strong>将您的数据用于以下用途：</p>
+<ul>
+  <li>用户画像、定向广告、市场推广或营销推送；</li>
+  <li>出售、租赁、交易或以其他任何方式提供给第三方作为商业用途；</li>
+  <li>自动化决策或算法训练（包括用于训练任何 AI/机器学习模型）；</li>
+  <li>跨产品、跨网站、跨设备追踪您的活动。</li>
+</ul>
+
+<h2 id="process">三、数据的处理方式</h2>
+<p>本产品对数据的处理遵循以下原则：</p>
+<ul>
+  <li><strong>本地优先（Local-first）：</strong>除非本政策明确说明，否则所有数据处理均发生在您的设备本地浏览器环境中。</li>
+  <li><strong>无后端服务器：</strong>本产品不运营、租用或使用任何自有或第三方后端服务器来存储或处理用户数据。</li>
+  <li><strong>无日志留存：</strong>本产品不创建、维护或传输任何用户活动日志、行为日志或诊断日志。</li>
+  <li><strong>无远端调用：</strong>本产品的代码不包含将用户数据回传至任何远端主机的逻辑。我们对涉及网络请求的部分保持最小化，并仅在功能所必需且不涉及用户数据时使用。</li>
+  <li><strong>处理完毕即丢弃：</strong>对于仅在内存中临时处理的数据（如读取的页面资源），在完成对应操作后即被释放，不会持久化。</li>
+</ul>
+
+<h2 id="store">四、数据的存储与保留</h2>
+<ul>
+  <li><strong>存储位置：</strong>本产品所产生的全部数据均存储在您本机浏览器中（通过浏览器提供的标准存储 API，例如 <code>chrome.storage.local</code>），不会同步至任何云端或外部服务器。</li>
+  <li><strong>保留期限：</strong>扩展配置信息会一直保留直到您主动清除扩展、卸载本产品或在扩展选项中重置。临时处理的页面资源在功能完成后即被丢弃，不会保留。</li>
+  <li><strong>跨境传输：</strong>由于我们不向任何境外或境内服务器传输用户数据，<strong>不存在任何数据跨境传输的情形</strong>。</li>
+  <li><strong>清除方式：</strong>您可以随时通过浏览器扩展管理页面卸载本产品，或在扩展选项中清除本地存储来删除所有由本产品保存的数据。</li>
+</ul>
+
+<h2 id="share">五、数据的共享、披露与传输对象</h2>
+<p>我们<strong>不会</strong>与任何第三方共享、出售、出租或以其他方式披露您的数据，包括但不限于：</p>
+<ul>
+  <li>广告网络、广告主或营销平台；</li>
+  <li>数据分析或行为追踪服务商（如 Google Analytics、Firebase 等）；</li>
+  <li>社交媒体平台或社交插件；</li>
+  <li>云存储、内容分发网络（CDN）或数据中介机构；</li>
+  <li>本开发者的关联方、合作伙伴、子公司、收购方或继承方（因为本产品无任何可被披露的数据）。</li>
+</ul>
+
+<p>在以下<strong>极端例外情形</strong>下，相关数据才可能被依法披露，且我们将仅披露法律强制要求的部分：</p>
+<ul>
+  <li>遵守适用法律、法规、具有法律效力的法院命令或政府主管机关的合法要求；</li>
+  <li>执行本产品的使用条款或协议；</li>
+  <li>保护我们、其他用户或社会公众的合法权益、人身安全或财产安全；</li>
+  <li>在涉及合并、收购、资产转让等公司交易中，配合必要的信息披露（前述场景中我们亦无可披露的用户数据）。</li>
+</ul>
+
+<p><strong>特别说明：</strong>由于本产品的数据处理完全在本地完成且不收集 PII，<strong>现实中不存在需要将您的数据共享给任何相关方的情形</strong>。如未来我们引入任何涉及数据共享的新功能，我们将提前更新本政策并以显著方式重新征得您的同意。</p>
+
+<h2 id="permission">六、权限说明</h2>
+<p>本产品在 <code>manifest.json</code> 中声明的权限仅用于实现其核心功能，不用于收集或传输任何用户数据：</p>
+<table>
+  <thead>
+    <tr>
+      <th>权限</th>
+      <th>用途</th>
+      <th>是否收集数据</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>activeTab</td>
+      <td>访问当前激活标签页的内容，以执行您请求的操作</td>
+      <td>否</td>
+    </tr>
+    <tr>
+      <td>scripting</td>
+      <td>向页面注入必要的脚本以实现功能</td>
+      <td>否</td>
+    </tr>
+    <tr>
+      <td>storage</td>
+      <td>在本地保存用户的扩展偏好设置</td>
+      <td>仅本地</td>
+    </tr>
+    <tr>
+      <td>contextMenus / notifications 等 UI 类权限</td>
+      <td>提供右键菜单、通知等界面交互能力</td>
+      <td>否</td>
+    </tr>
+    <tr>
+      <td>host_permissions（具体站点）</td>
+      <td>仅在您访问指定站点时读取必要资源以完成功能</td>
+      <td>否</td>
+    </tr>
+  </tbody>
+</table>
+<p>我们<strong>不会</strong>请求任何与本产品核心功能无关的权限，例如：读取所有网站全部数据的 <code>&lt;all_urls&gt;</code> 权限（除非该权限为实现核心功能所必需）、代理网络请求、读取 Cookie、读取浏览历史等。</p>
+
+<h2 id="third-party">七、第三方服务</h2>
+<p>本产品<strong>不集成、不调用、不向</strong>任何第三方服务（包括但不限于分析、统计、广告、错误监控、社交、CDN、AI 接口等）发送任何用户数据。</p>
+<p>本产品不包含任何会主动将用户数据传送至外部域名的网络请求代码。任何对外部资源的引用（若有）仅限于：</p>
+<ul>
+  <li>扩展商店页面的元信息（如评分、版本号展示）；</li>
+  <li>由浏览器自身或用户操作系统处理的更新检查。</li>
+</ul>
+<p>我们不对第三方网站的内容、隐私实践或政策负责。当您通过本产品跳转到第三方网站时，请阅读该第三方自身的隐私政策。</p>
+
+<h2 id="security">八、数据安全</h2>
+<p>我们采用业界普遍认可的安全措施保护您的数据：</p>
+<ul>
+  <li>所有数据处理均在您的本地设备上完成，避免了数据在网络传输过程中的泄露风险；</li>
+  <li>扩展遵循最小权限原则，源代码公开透明；</li>
+  <li>使用浏览器沙箱机制隔离扩展与网页之间的数据访问；</li>
+  <li>定期审查代码以确保不存在数据外传逻辑。</li>
+</ul>
+<p>尽管如此，<strong>没有任何数据处理方式可以做到 100% 安全</strong>。我们无法对因您设备被入侵、本地恶意软件、第三方浏览器漏洞等非我们可控因素造成的数据风险承担责任。请您保持设备与浏览器的及时更新。</p>
+
+<h2 id="children">九、未成年人隐私</h2>
+<p>本产品面向一般受众，不以未满 13 周岁（或您所在司法辖区规定的同等最低年龄）的儿童为特定目标。由于本产品本身不收集任何个人数据，<strong>我们不会、也无法</strong>收集来自儿童的个人信息。</p>
+<p>若您是未成年人，请在与监护人共同阅读并同意本政策后再使用本产品。如您是未成年人的监护人且发现本产品在未经您同意的情况下处理了您孩子相关的信息，请通过下方联系方式与我们联系。</p>
+
+<h2 id="rights">十、您的权利与选择</h2>
+<p>基于适用的数据保护法律（例如 GDPR、CCPA、《个人信息保护法》等），您享有以下权利：</p>
+<ul>
+  <li><strong>知情权与决定权：</strong>您有权了解本产品如何处理您的数据（详见本政策）。</li>
+  <li><strong>访问权：</strong>您可以在浏览器的扩展存储中查看由本产品保存的所有本地配置。</li>
+  <li><strong>更正与删除权：</strong>您可以在扩展选项页中修改或清除您设置的偏好；您可以随时卸载本产品以彻底删除所有相关数据。</li>
+  <li><strong>撤回同意：</strong>您可以通过卸载本产品随时撤回对本政策的同意。</li>
+  <li><strong>投诉权：</strong>如您认为本产品的数据处理违反相关法律，您有权向所在司法辖区的主管监管机构投诉。</li>
+</ul>
+<p>由于本产品不收集 PII 且数据均存储在本地，您无需也无法通过远程请求执行"被遗忘权"——通过卸载本产品即可达到同等效果。</p>
+
+<h2 id="changes">十一、政策变更</h2>
+<p>我们保留根据业务调整、法律法规变更或功能更新而修订本政策的权利。修订后的政策将：</p>
+<ul>
+  <li>在 Microsoft Store 产品页面的"隐私政策"链接所指向的本页面公布；</li>
+  <li>在生效前通过扩展更新日志或显著方式进行说明（涉及实质性变化时）；</li>
+  <li>在页面顶部更新"最后更新日期"。</li>
+</ul>
+<p>对于<strong>实质性变更</strong>（例如引入新的数据收集项、改变数据用途、增加第三方共享等），我们会通过扩展内的通知或商店更新说明提示您重新确认。未经您重新确认的情况下，我们不会启用任何新增的数据处理活动。</p>
+
+<h2 id="contact">十二、联系我们</h2>
+<p>如果您对本政策、您数据的处理方式或本产品的隐私实践有任何疑问、意见或投诉，请通过以下方式联系我们：</p>
+<ul>
+  <li><strong>Microsoft Store 产品页面：</strong>请通过本产品在 Microsoft Store 中的"支持"或"评论"渠道留言。</li>
+  <li><strong>开发者联系邮箱：</strong>请参见 Microsoft Store 产品页面上开发者信息中的联系方式。</li>
+</ul>
+<p>我们将在收到您的反馈后尽快予以回复。</p>
+
+<hr>
+<p class="updated">本隐私政策以中文（简体）版本为准。如其他语言译本与中文版本存在不一致之处，以中文版本内容为准。</p>
+
 </body>
 </html>
