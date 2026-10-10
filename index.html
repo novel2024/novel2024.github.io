@@ -42,6 +42,14 @@
             /* 去掉链接下划线 */
         }
 
+        /* 列表项一律左对齐。
+           Bootstrap 的 .btn 自带 text-align: center，而每条作品是一个
+           <a class="btn btn-link">（inline-block）；窄屏下标题折行时
+           该块撑满容器宽度，文字就被居中，很难看。 */
+        .list-unstyled li a {
+            text-align: left;
+        }
+
         /* 站内 / 站外 链接标识 */
         .link-tag {
             display: inline-block;
