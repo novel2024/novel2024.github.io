@@ -41,6 +41,41 @@
             text-decoration: none;
             /* 去掉链接下划线 */
         }
+
+        /* 站内 / 站外 链接标识 */
+        .link-tag {
+            display: inline-block;
+            margin-left: .4em;
+            padding: .1em .55em;
+            font-size: max(12px, .48em);
+            font-weight: normal;
+            line-height: 1.5;
+            border-radius: 1em;
+            border: 1px solid transparent;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        /* 站内：本站可读，蓝灰色系 */
+        .link-tag-site {
+            color: #4682B4;
+            background-color: #EAF2F8;
+            border-color: #A9C6DC;
+        }
+
+        /* 站外：跳转第三方站点，琥珀色系 */
+        .link-tag-external {
+            color: #B26A00;
+            background-color: #FFF4E5;
+            border-color: #FFCC80;
+        }
+
+        /* 暂缺：站内作品暂未上传，链接不可达 */
+        .link-tag-missing {
+            color: #B03A48;
+            background-color: #FDEDEF;
+            border-color: #F2B8C0;
+        }
     </style>
 </head>
 
@@ -51,38 +86,38 @@
         <p class="lead">姑射山人，原名：杨某某，硬科技低魔都市小说爱好者。Q群有惊喜：172073109</p>
         <hr>
         <ul class="list-unstyled">
-            <li><a href="算你厉害/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">32. 算你厉害 2026-10-10</a></li>
-            <li><a href="https://www.qidian.com/book/1049116533/" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">31. 我截胡了十万亿神级AI 2026-9-2</a></li>
-            <li><a href="https://fanqienovel.com/page/7561342823014861886" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">30. 细胞朋客 2026-2-13</a></li>
-            <li><a href="https://www.qidian.com/book/1041797816/" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">29. 明末乱攀 2025-2</a></li>
-            <li><a href="right-hand/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">28. 光明的右手 2024 ~ </a></li>
-            <li><a href="reborn98/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">27. 重生98做软件 2022-9-23 ~ 2022-12</a></li>
-            <li><a href="hermes/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">26. 赫尔墨斯 2022-7-12 ~ 2022-8-7</a></li>
-            <li><a href="pandora/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">25. 潘多拉 2022-06-27</a></li>
-            <li><a href="freemasonry/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">24. 共济会风云 2022-01-08</a></li>
-            <li><a href="storm-butterfly/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">23. 风暴蝴蝶 2021-11-26</a></li>
-            <li><a href="the-dark-energy-empire/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">22. 暗能量帝国 2020-12-27 暂缺</a></li>
-            <li><a href="fisher/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">21. 熵与费雪原理 2020-06-24</a></li>
-            <li><a href="the-whitelist/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">20. 白名单 2020 暂缺</a></li>
-            <li><a href="brain-computer-interface/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">19. 脑机接口 2019-12-24</a></li>
-            <li><a href="eth/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">18. 以太坊 2018-02-18</a></li>
-            <li><a href="web-of-consciousness/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">17. 意识网络 2018-11-13 暂缺</a></li>
-            <li><a href="table-maker/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">16. 独立制表人 2018-04-25</a></li>
-            <li><a href="nebula/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">15. 回力棒星云 2017-03-14</a></li>
-            <li><a href="summoning/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">14. 神魔世界的召唤 2017-05-03</a></li>
-            <li><a href="hacker/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">13. 迷之黑客系统 2017-06-21</a></li>
-            <li><a href="son-of-the-house/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">12. 房二代的小确幸 2017-07-19</a></li>
-            <li><a href="ip/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">11. IP巨咖 2016-11-18</a></li>
-            <li><a href="lucky/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">10. 神抽手 2016-12-28</a></li>
-            <li><a href="innovation/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">9. 创新教父 2016-06-27</a></li>
-            <li><a href="secret-of-victoria/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">8. 维多利亚的秘密 2016-06-19</a></li>
-            <li><a href="discordant-youth/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">7. 违和少年 2013-03-20</a></li>
-            <li><a href="uncle-sharp/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">6. 犀利叔列传 2012-08-15 暂缺</a></li>
-            <li><a href="world-of-flowers/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">5. 遍地花 2009-04-29 暂缺</a></li>
-            <li><a href="prehistoric-machinery/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">4. 遭遇史前机器 2007-08-05 暂缺</a></li>
-            <li><a href="sub-world/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">3. 次世界 2006-01-19 暂缺</a></li>
-            <li><a href="happiness-out-of-nowhere/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">2. 编出来的幸福 2006-04-01</a></li>
-            <li><a href="transfer-student/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">1. 插班生甲 2005-05-27 暂缺</a></li>
+            <li><a href="算你厉害/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">32. 算你厉害 2026-10-10<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="https://www.qidian.com/book/1049116533/" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">31. 我截胡了十万亿神级AI 2026-9-2<span class="link-tag link-tag-external">站外</span></a></li>
+            <li><a href="https://fanqienovel.com/page/7561342823014861886" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">30. 细胞朋客 2026-2-13<span class="link-tag link-tag-external">站外</span></a></li>
+            <li><a href="https://www.qidian.com/book/1041797816/" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">29. 明末乱攀 2025-2<span class="link-tag link-tag-external">站外</span></a></li>
+            <li><a href="right-hand/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">28. 光明的右手 2024 ~ <span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="reborn98/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">27. 重生98做软件 2022-9-23 ~ 2022-12<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="hermes/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">26. 赫尔墨斯 2022-7-12 ~ 2022-8-7<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="pandora/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">25. 潘多拉 2022-06-27<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="freemasonry/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">24. 共济会风云 2022-01-08<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="storm-and-butterfly/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">23. 风暴蝴蝶 2021-11-26<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="the-dark-energy-empire/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">22. 暗能量帝国 2020-12-27<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="fisher/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">21. 熵与费雪原理 2020-06-24<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="the-whitelist/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">20. 白名单 2020<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="brain-computer-interface/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">19. 脑机接口 2019-12-24<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="eth/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">18. 以太坊 2018-02-18<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="web-of-consciousness/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">17. 意识网络 2018-11-13<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="watch-maker/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">16. 独立制表人 2018-04-25<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="nebula/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">15. 回力棒星云 2017-03-14<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="summon/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">14. 神魔世界的召唤 2017-05-03<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="hacker/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">13. 迷之黑客系统 2017-06-21<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="son-of-house/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">12. 房二代的小确幸 2017-07-19<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="ip/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">11. IP巨咖 2016-11-18<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="lucky/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">10. 神抽手 2016-12-28<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="innovation/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">9. 创新教父 2016-06-27<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="secret-of-victoria/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">8. 维多利亚的秘密 2016-06-19<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="discordant-youth/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">7. 违和少年 2013-03-20<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="uncle-sharp/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">6. 犀利叔列传 2012-08-15<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="world-of-flowers/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">5. 遍地花 2009-04-29<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="prehistoric-machinery/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">4. 遭遇史前机器 2007-08-05<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="sub-world/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">3. 次世界 2006-01-19<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
+            <li><a href="happiness-out-of-nowhere/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">2. 编出来的幸福 2006-04-01<span class="link-tag link-tag-site">站内</span></a></li>
+            <li><a href="transfer-student/index.html" class="btn btn-link custom-link" target="_blank" rel="noopener noreferrer">1. 插班生甲 2005-05-27<span class="link-tag link-tag-site">站内</span><span class="link-tag link-tag-missing">暂缺</span></a></li>
         </ul>
     </div>
 
